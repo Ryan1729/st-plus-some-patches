@@ -1,0 +1,12 @@
+I downloaded the diffs from http://st.suckless.org/patches/scrollback
+but the last one didn't work. I tested just the first two and the
+result worked as expected (shift needed to scroll) so I made what 
+seemed like the right edit based on what's in the last diff, leaving a
+for loop that the patch didn't expect to be there, there. 
+
+That didn't work. So I tried removing that for loop: that didn't work.
+Looked at the other diffs and that for loop was added by one of them.
+
+Eventually realized that the shift part of the scroll was part of the config.
+So, once I actually set the scroll to not require the shift button I could
+apply the last patch manually again and Voila! It works.

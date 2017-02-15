@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+//static char font[] = "Fantasque Sans Mono:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 2;
 #define histsize 2000
 
@@ -158,8 +159,9 @@ static MouseShortcut mshortcuts[] = {
 
 static MouseKey mkeys[] = {
 	/* button               mask            function        argument */
-	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
-	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
+	{ Button4,              XK_NO_MOD,      kscrollup,      {.i =  1} },
+	{ Button5,              XK_NO_MOD,      kscrolldown,    {.i =  1} },
+	{ Button3,              XK_NO_MOD,      clippaste,      {.i =  0} },
 };
 
 /* Internal keyboard shortcuts. */
@@ -175,9 +177,9 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,     XK_Next,        xzoom,          {.f = -1} },
 	{ MODKEY|ShiftMask,     XK_Home,        xzoomreset,     {.f =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
+	{ ControlMask|ShiftMask,     XK_Insert,      clippaste,      {.i =  0} },
+	{ ControlMask|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
+	{ ControlMask|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
